@@ -30,7 +30,7 @@ client
   })
 ```
 
-The granted access token is store in the client instance, meaning subsequent
+The granted access token is stored in the client instance, meaning subsequent
 requests using the same client do not require to authenticate again.
 
 # Examples

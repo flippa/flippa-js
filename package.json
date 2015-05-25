@@ -1,11 +1,12 @@
 {
   "name": "flippa-node",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "API client for Flippa.com.",
-  "main": "dist/flippa.js",
+  "main": "dist/Flippa.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive --compilers js:babel/register",
-    "build": "webpack"
+    "build": "./node_modules/.bin/babel src -d dist",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",

@@ -22,7 +22,7 @@ client
   .authenticate({
     grant_type: "client_credentials",
     client_id: "123",
-    client_secret: "ssh"
+    client_secret: "shh"
   })
   .then(function(response) {
     // Authentication succeeded; can now make authorized requests.
@@ -31,7 +31,7 @@ client
 ```
 
 The granted access token is stored in the client instance, meaning subsequent
-requests using the same client do not require to authenticate again.
+requests using the same client do not need to authenticate again.
 
 # Examples
 

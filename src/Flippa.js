@@ -23,11 +23,19 @@ export default class Flippa {
     return request.promise();
   }
 
-  post(endpoint, params) {
+  post(endpoint, params, cookies={}) {
     var request = Request
       .post(this.base_endpoint_url + endpoint)
       .set("Accept", "application/json")
       .send(params)
+
+    if (Object.keys(cookies).length !== 0) {
+      const cookieString = Object.keys(cookies).reduce((acc, key) => {
+        return `${acc}${key}=${cookies[key]};`;
+      }, "");
+
+      request.set("Cookie", cookieString);
+    }
 
     if (this.access_token) {
       request.set("Authorization", `Bearer ${this.access_token}`)
@@ -36,10 +44,10 @@ export default class Flippa {
     return request.promise();
   }
 
-  authenticate(params) {
+  authenticate(params, cookies={}) {
     return new Promise((resolve, reject) => {
       this
-        .post("/oauth2/token", params)
+        .post("/oauth2/token", params, cookies)
         .then(res => {
           this.access_token = res.body.access_token;
           resolve();

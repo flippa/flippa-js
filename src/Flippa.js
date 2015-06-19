@@ -4,7 +4,9 @@ import Promise from "bluebird";
 import Listing from "./Listing"
 import Listings from "./Listings"
 import Metrics from "./Metrics"
+import SavedSearch from "./SavedSearch";
 import Sessions from "./Sessions";
+import User from "./User";
 import Users from "./Users"
 
 export default class Flippa {
@@ -19,9 +21,7 @@ export default class Flippa {
       .send(params)
       .set("Accept", "application/json")
 
-    if (this.access_token) {
-      request.set("Authorization", `Bearer ${this.access_token}`)
-    }
+    this._setAuthorizationHeader(request);
 
     return request.promise();
   }
@@ -40,9 +40,17 @@ export default class Flippa {
       request.set("Cookie", cookieString);
     }
 
-    if (this.access_token) {
-      request.set("Authorization", `Bearer ${this.access_token}`)
-    }
+    this._setAuthorizationHeader(request);
+
+    return request.promise();
+  }
+
+  del(endpoint) {
+    var request = Request
+      .del(this.base_endpoint_url + endpoint)
+      .set("Accept", "application/json");
+
+    this._setAuthorizationHeader(request);
 
     return request.promise();
   }
@@ -71,11 +79,25 @@ export default class Flippa {
     return new Metrics(this);
   }
 
+  users() {
+    return new Users(this);
+  }
+
+  user(user_id) {
+    return new User(this, user_id);
+  }
+
+  saved_search(saved_search_id) {
+    return new SavedSearch(this, saved_search_id);
+  }
+
   sessions() {
     return new Sessions(this);
   }
 
-  users() {
-    return new Users(this);
+  _setAuthorizationHeader(request) {
+    if (this.access_token) {
+      request.set("Authorization", `Bearer ${this.access_token}`);
+    }
   }
 };

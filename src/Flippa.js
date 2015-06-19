@@ -5,6 +5,7 @@ import Listing from "./Listing"
 import Listings from "./Listings"
 import Metrics from "./Metrics"
 import Sessions from "./Sessions";
+import Users from "./Users"
 
 export default class Flippa {
   constructor(opts={}) {
@@ -72,5 +73,9 @@ export default class Flippa {
 
   sessions() {
     return new Sessions(this);
+  }
+
+  users() {
+    return new Users(this);
   }
 };

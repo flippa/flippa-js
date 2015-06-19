@@ -3,6 +3,7 @@ import Promise from "bluebird";
 
 import Listing from "./Listing"
 import Listings from "./Listings"
+import Metrics from "./Metrics"
 
 export default class Flippa {
   constructor(opts={}) {
@@ -62,5 +63,9 @@ export default class Flippa {
 
   listing(listing_id) {
     return new Listing(this, listing_id);
+  }
+
+  metrics() {
+    return new Metrics(this);
   }
 };

@@ -4,6 +4,7 @@ var expect = chai.expect;
 var Flippa = require("../../src/Flippa");
 var Listing = require("../../src/Listing");
 var Listings = require("../../src/Listings");
+var Metrics = require("../../src/Metrics");
 
 describe("Flippa", function() {
   describe("base endpoint URL", function() {
@@ -49,6 +50,14 @@ describe("Flippa", function() {
       var listing = flippa.listing(123)
       expect(listing).to.be.an.instanceOf(Listing)
       expect(listing.listing_id).to.equal(123)
+    });
+  });
+
+  describe("metrics", function() {
+    it("returns a new Metrics", function() {
+      var flippa = new Flippa();
+
+      expect(flippa.metrics()).to.be.an.instanceOf(Metrics)
     });
   });
 });

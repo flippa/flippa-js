@@ -5,6 +5,7 @@ var Flippa = require("../../src/Flippa");
 var Listing = require("../../src/Listing");
 var Listings = require("../../src/Listings");
 var Metrics = require("../../src/Metrics");
+var Sessions = require("../../src/Sessions");
 
 describe("Flippa", function() {
   describe("base endpoint URL", function() {
@@ -58,6 +59,15 @@ describe("Flippa", function() {
       var flippa = new Flippa();
 
       expect(flippa.metrics()).to.be.an.instanceOf(Metrics)
+    });
+  });
+
+  describe("sessions", function() {
+    it("returns a new Sessions", function() {
+      var flippa = new Flippa();
+
+      var sessions = flippa.sessions()
+      expect(sessions).to.be.an.instanceOf(Sessions)
     });
   });
 });

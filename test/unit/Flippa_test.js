@@ -5,7 +5,9 @@ var Flippa = require("../../src/Flippa");
 var Listing = require("../../src/Listing");
 var Listings = require("../../src/Listings");
 var Metrics = require("../../src/Metrics");
+var SavedSearch = require("../../src/SavedSearch");
 var Sessions = require("../../src/Sessions");
+var User = require("../../src/User");
 var Users = require("../../src/Users");
 
 describe("Flippa", function() {
@@ -77,6 +79,26 @@ describe("Flippa", function() {
       var flippa = new Flippa();
 
       expect(flippa.users()).to.be.an.instanceOf(Users)
+    });
+  });
+
+  describe("user", function() {
+    it("returns a new User with the given ID", function() {
+      var flippa = new Flippa();
+
+      var user = flippa.user(123)
+      expect(user).to.be.an.instanceOf(User)
+      expect(user.user_id).to.equal(123)
+    });
+  });
+
+  describe("saved_search", function() {
+    it("returns a new SavedSearch with the given ID", function() {
+      var flippa = new Flippa();
+
+      var search = flippa.saved_search(123)
+      expect(search).to.be.an.instanceOf(SavedSearch)
+      expect(search.saved_search_id).to.equal(123)
     });
   });
 });

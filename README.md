@@ -45,3 +45,17 @@ client
     console.log(response.body.data);
   })
 ```
+
+# Development
+
+Running tests:
+
+```shell
+$ make build test
+```
+
+Publishing to npm:
+
+```shell
+$ TAG=v1.2.3 make build publish
+```

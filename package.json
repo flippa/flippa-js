@@ -2,6 +2,7 @@
   "name": "flippa-node",
   "version": "0.2.4",
   "description": "API client for Flippa.com.",
+  "readme": "README.md",
   "main": "dist/Flippa.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive --compilers js:babel/register",

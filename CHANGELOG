@@ -1,0 +1,7 @@
+head
+
+* Add a CHANGELOG.
+* Support for saved search endpoints.
+* Support for user identification endpoint.
+* Support for session endpoint.
+* Support for metrics endpoint.

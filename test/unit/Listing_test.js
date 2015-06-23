@@ -1,16 +1,17 @@
-var chai = require("chai");
-var expect = chai.expect;
+import chai from "chai";
 
-var Listing = require("../../src/Listing");
-var DomainTraits = require("../../src/DomainTraits");
+const expect = chai.expect;
 
-describe("Listing", function() {
-  describe("domain_traits", function() {
-    it("returns a new DomainTraits for the client and listing ID", function() {
-      var client = {};
-      var listing = new Listing(client, 123);
+import Listing from "../../src/Listing";
+import DomainTraits from "../../src/DomainTraits";
 
-      var traits = listing.domain_traits();
+describe("Listing", () => {
+  describe("domain_traits", () => {
+    it("returns a new DomainTraits for the client and listing ID", () => {
+      const client = {};
+      const listing = new Listing(client, 123);
+
+      const traits = listing.domain_traits();
       expect(traits).to.be.an.instanceOf(DomainTraits)
       expect(traits.listing_id).to.equal(123)
     });

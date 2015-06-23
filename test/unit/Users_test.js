@@ -1,17 +1,18 @@
-var chai = require("chai");
-var sinon = require("sinon");
+import chai from "chai";
+import sinon from "sinon";
+import sinonChai from "sinon-chai";
 
-chai.use(require("sinon-chai"));
-var expect = chai.expect;
+chai.use(sinonChai);
+const expect = chai.expect;
 
-var Users = require("../../src/Users");
+import Users from "../../src/Users";
 
-describe("Users", function() {
-  describe("identify", function() {
-    it("delegates to the given client", function() {
-      var get = sinon.spy();
-      var client = { get };
-      var users = new Users(client);
+describe("Users", () => {
+  describe("identify", () => {
+    it("delegates to the given client", () => {
+      const get = sinon.spy();
+      const client = { get };
+      const users = new Users(client);
 
       users.identify();
 

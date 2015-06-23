@@ -1,5 +1,5 @@
 {
-  "name": "flippa-node",
+  "name": "flippa",
   "version": "0.2.4",
   "description": "API client for Flippa.com.",
   "readme": "README.md",

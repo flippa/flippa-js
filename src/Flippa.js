@@ -61,9 +61,11 @@ export default class Flippa {
         .post("/oauth2/token", params, cookies)
         .then(res => {
           this.access_token = res.body.access_token;
-          resolve();
+          resolve(this);
         })
-        .catch(err => reject(err))
+        .catch((err) => {
+          reject(err)
+        });
     });
   }
 

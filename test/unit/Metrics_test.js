@@ -1,17 +1,18 @@
-var chai = require("chai");
-var sinon = require("sinon");
+import chai from "chai";
+import sinon from "sinon";
+import sinonChai from "sinon-chai";
 
-chai.use(require("sinon-chai"));
-var expect = chai.expect;
+const expect = chai.expect;
+chai.use(sinonChai);
 
-var Metrics = require("../../src/Metrics");
+import Metrics from "../../src/Metrics";
 
-describe("Metrics", function() {
-  describe("list", function() {
-    it("delegates to the client", function() {
-      var get = sinon.spy();
-      var client = { get };
-      var metrics = new Metrics(client);
+describe("Metrics", () => {
+  describe("list", () => {
+    it("delegates to the client", () => {
+      const get = sinon.spy();
+      const client = { get };
+      const metrics = new Metrics(client);
 
       metrics.list();
 

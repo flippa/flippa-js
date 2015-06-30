@@ -1,24 +1,23 @@
-var chai = require("chai");
-var nock = require("nock");
-var chaiAsPromised = require('chai-as-promised');
+import chai from "chai";
+import nock from "nock";
+import chaiAsPromised from "chai-as-promised";
+import Flippa from "../../src/Flippa";
+
 chai.use(chaiAsPromised);
+const expect = chai.expect;
 
-var expect = chai.expect;
+describe("Flippa", () => {
+  describe("authenticate with a client credentials grant", () => {
+    it("sets the client access token on success", (done) => {
+      const client = new Flippa({base_endpoint_url: "http://localhost"});
 
-var Flippa = require("../../src/Flippa");
-
-describe("Flippa", function() {
-  describe("authenticate with a client credentials grant", function() {
-    it("sets the client access token on success", function(done) {
-      var client = new Flippa({base_endpoint_url: "http://localhost"});
-
-      var auth = {
+      const auth = {
         grant_type: "client_credentials",
         client_id: "123",
         client_secret: "shh"
       };
 
-      var server = nock("http://localhost")
+      const server = nock("http://localhost")
         .post("/oauth2/token", auth)
         .matchHeader("Accept", "application/json")
         .reply(200, {access_token: "some_token"});
@@ -29,16 +28,16 @@ describe("Flippa", function() {
     });
   });
 
-  describe("authenticate with a login cookie grant", function() {
-    it("sets the client access token on success", function(done) {
-      var client = new Flippa({base_endpoint_url: "http://localhost"});
+  describe("authenticate with a login cookie grant", () => {
+    it("sets the client access token on success", (done) => {
+      const client = new Flippa({base_endpoint_url: "http://localhost"});
 
-      var auth = {
+      const auth = {
         grant_type: "login_cookie",
         client_id: "123",
       };
 
-      var server = nock("http://localhost")
+      const server = nock("http://localhost")
         .post("/oauth2/token", auth)
         .matchHeader("Accept", "application/json")
         .matchHeader("Cookie", "utok=bob;")

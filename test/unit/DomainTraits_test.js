@@ -1,17 +1,18 @@
-var chai = require("chai");
-var sinon = require("sinon");
+import chai from "chai";
+import sinon from "sinon";
+import sinonChai from "sinon-chai";
 
-chai.use(require("sinon-chai"));
-var expect = chai.expect;
+const expect = chai.expect;
+chai.use(sinonChai);
 
-var DomainTraits = require("../../src/DomainTraits");
+import DomainTraits from "../../src/DomainTraits";
 
-describe("DomainTraits", function() {
-  describe("list", function() {
-    it("delegates to the client", function() {
-      var get = sinon.spy();
-      var client = { get };
-      var traits = new DomainTraits(client, 123);
+describe("DomainTraits", () => {
+  describe("list", () => {
+    it("delegates to the client", () => {
+      const get = sinon.spy();
+      const client = { get };
+      const traits = new DomainTraits(client, 123);
 
       traits.list();
 

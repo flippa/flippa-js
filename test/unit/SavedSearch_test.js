@@ -1,17 +1,18 @@
-var chai = require("chai");
-var sinon = require("sinon");
+import chai from "chai";
+import sinon from "sinon";
+import sinonChai from "sinon-chai";
 
-chai.use(require("sinon-chai"));
-var expect = chai.expect;
+const expect = chai.expect;
+chai.use(sinonChai);
 
-var SavedSearch = require("../../src/SavedSearch");
+import SavedSearch from "../../src/SavedSearch";
 
-describe("SavedSearch", function() {
-  describe("delete", function() {
-    it("delegates to the client", function() {
-      var del = sinon.spy();
-      var client = { del };
-      var search = new SavedSearch(client, 123);
+describe("SavedSearch", () => {
+  describe("delete", () => {
+    it("delegates to the client", () => {
+      const del = sinon.spy();
+      const client = { del };
+      const search = new SavedSearch(client, 123);
 
       search.del();
 

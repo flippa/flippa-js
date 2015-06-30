@@ -1,19 +1,18 @@
-var chai = require("chai");
-var nock = require("nock");
+import chai from "chai";
+import nock from "nock";
+import Flippa from "../../src/Flippa";
 
-var expect = chai.expect;
+const expect = chai.expect;
 
-var Flippa = require("../../src/Flippa");
-
-describe("Listings", function() {
-  describe("list", function() {
-    it("returns a promise for listing data with the given params", function() {
-      var client = new Flippa({
+describe("Listings", () => {
+  describe("list", () => {
+    it("returns a promise for listing data with the given params", () => {
+      const client = new Flippa({
         base_endpoint_url: "http://localhost",
         access_token: "some_token",
       });
 
-      var server = nock("http://localhost")
+      const server = nock("http://localhost")
         .get("/listings", {filter: {property_name: "bob.com"}})
         .matchHeader("Accept", "application/json")
         .matchHeader("Authorization", "Bearer some_token")
@@ -22,7 +21,7 @@ describe("Listings", function() {
       client
         .listings()
         .list({filter: {property_name: "bob.com"}})
-        .then(function(res) {
+        .then((res) => {
           expect(res.body.data.length).to.equal(1)
           expect(res.body.data[0].id).to.equal("123")
         });

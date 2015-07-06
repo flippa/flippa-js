@@ -2,7 +2,7 @@ PROJECT ?= quay.io/flippa/flippa-node
 TAG     ?= latest
 IMAGE    = $(PROJECT):$(TAG)
 
-.PHONY: build shell test
+.PHONY: build shell test publish tag
 
 build: Dockerfile
 	docker build --rm -t $(IMAGE) .
@@ -15,5 +15,7 @@ test:
 
 publish: build
 	docker run --rm -it $(IMAGE) npm login && npm publish --unsafe-perm
+
+tag:
 	git tag $(TAG)
 	git push --tags

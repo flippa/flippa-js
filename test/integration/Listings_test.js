@@ -13,18 +13,20 @@ describe("Listings", () => {
       });
 
       const server = nock("http://localhost")
-        .get("/listings", {filter: {property_name: "bob.com"}})
+        .get("/listings?filter%5Bproperty_name%5D=bob.com")
         .matchHeader("Accept", "application/json")
         .matchHeader("Authorization", "Bearer some_token")
         .reply(200, {data: [{type: "listings", id: "123"}]});
 
-      client
-        .listings()
-        .list({filter: {property_name: "bob.com"}})
-        .then((res) => {
-          expect(res.body.data.length).to.equal(1)
-          expect(res.body.data[0].id).to.equal("123")
-        });
+        return client
+          .listings()
+          .list({filter: {property_name: "bob.com"}})
+          .then((response) =>  {
+            expect(response.body.data).to.eql([{type: 'listings', id: '123'}]);
+          })
+          .catch((err) => {
+            throw err;
+          });
     });
   });
 });

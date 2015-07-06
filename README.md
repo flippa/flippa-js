@@ -57,5 +57,5 @@ $ make build test
 Publishing to npm:
 
 ```shell
-$ TAG=v1.2.3 make build publish
+$ TAG=v1.2.3 make build test publish tag
 ```

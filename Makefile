@@ -14,7 +14,7 @@ test:
 	docker run --rm -t $(IMAGE) npm run test
 
 publish: build
-	docker run --rm -it $(IMAGE) npm login && npm publish --unsafe-perm
+	docker run --rm -it $(IMAGE) bash scripts/publish.sh
 
 tag:
 	git tag $(TAG)

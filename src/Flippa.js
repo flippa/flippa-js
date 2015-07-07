@@ -18,7 +18,7 @@ export default class Flippa {
   get(endpoint, params) {
     var request = Request
       .get(this.base_endpoint_url + endpoint)
-      .send(params)
+      .query(params)
       .set("Accept", "application/json")
 
     this._setAuthorizationHeader(request);

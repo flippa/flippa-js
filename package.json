@@ -1,6 +1,6 @@
 {
   "name": "flippa-node",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "API client for Flippa.com.",
   "readme": "README.md",
   "main": "dist/Flippa.js",

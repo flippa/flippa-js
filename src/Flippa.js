@@ -1,5 +1,6 @@
 import Request from "superagent-bluebird-promise";
 import Promise from "bluebird";
+import qs from 'qs';
 
 import Listing from "./Listing"
 import Listings from "./Listings"
@@ -18,7 +19,7 @@ export default class Flippa {
   get(endpoint, params) {
     var request = Request
       .get(this.base_endpoint_url + endpoint)
-      .query(params)
+      .query(qs.stringify(params))
       .set("Accept", "application/json")
 
     this._setAuthorizationHeader(request);

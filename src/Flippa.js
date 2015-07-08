@@ -12,7 +12,7 @@ import Users from "./Users"
 
 export default class Flippa {
   constructor(opts={}) {
-    this.base_endpoint_url = opts.base_endpoint_url || "https://api.flippa.net/v3";
+    this.base_endpoint_url = opts.base_endpoint_url || "https://flippa.com/v3";
     this.access_token = opts.access_token || null;
   }
 

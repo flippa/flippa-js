@@ -1,3 +1,7 @@
+0.4.0
+
+* Added 'qs' library to handle conversion of query parameters to strings.
+
 0.3.1
 
 * Fixed a bug where URL parameters were not being properly encoded.

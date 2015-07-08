@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "bluebird": "^2.9.25",
+    "qs": "^4.0.0",
     "superagent": "^1.2.0",
     "superagent-bluebird-promise": "^2.0.2"
   }

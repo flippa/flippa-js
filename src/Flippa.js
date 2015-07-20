@@ -1,67 +1,29 @@
-import Request from "superagent-bluebird-promise";
-import Promise from "bluebird";
-import qs from 'qs';
+import Client from "./Client";
 
-import Listing from "./Listing"
-import Listings from "./Listings"
-import Metrics from "./Metrics"
-import SavedSearch from "./SavedSearch";
-import Sessions from "./Sessions";
-import User from "./User";
-import Users from "./Users"
+import Listings from "./resources/Listings";
+import Metrics from "./resources/Metrics";
+import SavedSearches from "./resources/SavedSearches";
+import Sessions from "./resources/Sessions";
+import Users from "./resources/Users";
+
+import Promise from "bluebird";
 
 export default class Flippa {
   constructor(opts={}) {
-    this.base_endpoint_url = opts.base_endpoint_url || "https://flippa.com/v3";
-    this.access_token = opts.access_token || null;
+    this.client = new Client(opts);
   }
 
-  get(endpoint, params) {
-    var request = Request
-      .get(this.base_endpoint_url + endpoint)
-      .query(qs.stringify(params))
-      .set("Accept", "application/json")
-
-    this._setAuthorizationHeader(request);
-
-    return request.promise();
-  }
-
-  post(endpoint, params, cookies={}) {
-    var request = Request
-      .post(this.base_endpoint_url + endpoint)
-      .set("Accept", "application/json")
-      .send(params)
-
-    if (Object.keys(cookies).length !== 0) {
-      const cookieString = Object.keys(cookies).reduce((acc, key) => {
-        return `${acc}${key}=${cookies[key]};`;
-      }, "");
-
-      request.set("Cookie", cookieString);
-    }
-
-    this._setAuthorizationHeader(request);
-
-    return request.promise();
-  }
-
-  del(endpoint) {
-    var request = Request
-      .del(this.base_endpoint_url + endpoint)
-      .set("Accept", "application/json");
-
-    this._setAuthorizationHeader(request);
-
-    return request.promise();
+  accessToken() {
+    return this.client.accessToken;
   }
 
   authenticate(params, cookies={}) {
     return new Promise((resolve, reject) => {
       this
+        .client
         .post("/oauth2/token", params, cookies)
         .then(res => {
-          this.access_token = res.body.access_token;
+          this.client.accessToken = res.body.access_token;
           resolve(this);
         })
         .catch((err) => {
@@ -70,37 +32,23 @@ export default class Flippa {
     });
   }
 
-  listings() {
-    return new Listings(this);
+  get listings() {
+    return new Listings(this.client);
   }
 
-  listing(listing_id) {
-    return new Listing(this, listing_id);
+  get metrics() {
+    return new Metrics(this.client);
   }
 
-  metrics() {
-    return new Metrics(this);
+  get users() {
+    return new Users(this.client);
   }
 
-  users() {
-    return new Users(this);
+  get sessions() {
+    return new Sessions(this.client);
   }
 
-  user(user_id) {
-    return new User(this, user_id);
-  }
-
-  saved_search(saved_search_id) {
-    return new SavedSearch(this, saved_search_id);
-  }
-
-  sessions() {
-    return new Sessions(this);
-  }
-
-  _setAuthorizationHeader(request) {
-    if (this.access_token) {
-      request.set("Authorization", `Bearer ${this.access_token}`);
-    }
+  get savedSearches() {
+    return new SavedSearches(this.client);
   }
 };

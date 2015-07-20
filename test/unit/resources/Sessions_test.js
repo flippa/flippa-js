@@ -5,7 +5,7 @@ import sinonChai from "sinon-chai";
 chai.use(sinonChai);
 const expect = chai.expect;
 
-import Sessions from "../../src/Sessions";
+import Sessions from "../../../src/resources/Sessions";
 
 describe("Sessions", () => {
   describe("create", () => {

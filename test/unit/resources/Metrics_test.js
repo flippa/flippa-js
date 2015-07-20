@@ -5,7 +5,7 @@ import sinonChai from "sinon-chai";
 const expect = chai.expect;
 chai.use(sinonChai);
 
-import Metrics from "../../src/Metrics";
+import Metrics from "../../../src/resources/Metrics";
 
 describe("Metrics", () => {
   describe("list", () => {

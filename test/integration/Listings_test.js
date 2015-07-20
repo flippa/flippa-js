@@ -8,8 +8,8 @@ describe("Listings", () => {
   describe("list", () => {
     it("returns a promise for listing data with the given params", () => {
       const client = new Flippa({
-        base_endpoint_url: "http://localhost",
-        access_token: "some_token",
+        baseEndpointURL: "http://localhost",
+        accessToken: "some_token",
       });
 
       const server = nock("http://localhost")
@@ -19,7 +19,7 @@ describe("Listings", () => {
         .reply(200, {data: [{type: "listings", id: "123"}]});
 
         return client
-          .listings()
+          .listings
           .list({filter: {property_name: "bob.com"}})
           .then((response) =>  {
             expect(response.body.data).to.eql([{type: 'listings', id: '123'}]);

@@ -1,5 +1,5 @@
 PROJECT ?= quay.io/flippa/flippa-node
-TAG     ?= latest
+TAG     ?= dev
 IMAGE    = $(PROJECT):$(TAG)
 
 .PHONY: build shell test publish tag

@@ -5,18 +5,18 @@ import sinonChai from "sinon-chai";
 chai.use(sinonChai);
 const expect = chai.expect;
 
-import SavedSearches from "../../src/SavedSearches";
+import SavedSearches from "../../../src/resources/SavedSearches";
 
 describe("SavedSearches", () => {
-  describe("list", () => {
+  describe("del", () => {
     it("delegates to the client", () => {
-      const get = sinon.spy();
-      const client = { get };
+      const del = sinon.spy();
+      const client = { del };
       const searches = new SavedSearches(client, 123);
 
-      searches.list();
+      searches.del(123);
 
-      expect(get).to.have.been.calledWith("/users/123/saved-searches");
+      expect(del).to.have.been.calledWith("/saved-searches/123");
     });
   });
 });

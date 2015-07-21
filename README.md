@@ -9,7 +9,7 @@ constructed, or can request a token using one of the supported OAuth2 grant
 types.
 
 ```javascript
-client = new Flippa({access_token: "some_token"});
+flippa = new Flippa({accessToken: "some_token"});
 ```
 
 ### Client Credentials Grant
@@ -17,8 +17,8 @@ client = new Flippa({access_token: "some_token"});
 Currently, this grant type is limited to internal Flippa usage only.
 
 ```javascript
-client = new Flippa();
-client
+flippa = new Flippa();
+flippa
   .authenticate({
     grant_type: "client_credentials",
     client_id: "123",
@@ -26,7 +26,7 @@ client
   })
   .then(function(response) {
     // Authentication succeeded; can now make authorized requests.
-    console.log(client.access_token);
+    console.log(flippa.accessToken());
   })
 ```
 
@@ -38,7 +38,7 @@ requests using the same client do not need to authenticate again.
 Retrieving open listings by user 123:
 
 ```javascript
-client
+flippa
   .listings()
   .list({filter: {status: "open", user_id: 123})
   .then(function(response) {

@@ -1,6 +1,6 @@
 {
-  "name": "flippa-node",
-  "version": "0.5.0",
+  "name": "flippa",
+  "version": "1.0.0",
   "description": "API client for Flippa.com.",
   "readme": "README.md",
   "main": "dist/Flippa.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flippa/flippa-node.git"
+    "url": "git+https://github.com/flippa/flippa-js.git"
   },
   "keywords": [
     "flippa"
@@ -19,9 +19,9 @@
   "author": "flippa.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/flippa/flippa-node/issues"
+    "url": "https://github.com/flippa/flippa-js/issues"
   },
-  "homepage": "https://github.com/flippa/flippa-node#readme",
+  "homepage": "https://github.com/flippa/flippa-js#readme",
   "devDependencies": {
     "babel": "^5.6.14",
     "babel-loader": "^5.3.1",

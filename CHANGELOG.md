@@ -1,5 +1,8 @@
 ### head
 
+### 1.0.0
+
+* Package renamed from `flippa-node` to `flippa`.
 * Move to more resource-oriented implementation.
 * Breaking: Multiple API methods have moved, configuration keys have changed case.
 

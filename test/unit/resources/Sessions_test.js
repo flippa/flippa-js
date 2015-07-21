@@ -9,7 +9,7 @@ import Sessions from "../../../src/resources/Sessions";
 
 describe("Sessions", () => {
   describe("create", () => {
-    it("delegates to the given client", () => {
+    it("calls POST /sessions", () => {
       const post = sinon.spy();
       const client = { post };
       const sessions = new Sessions(client);

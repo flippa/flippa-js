@@ -9,7 +9,7 @@ import Users from "../../../src/resources/Users";
 
 describe("Users", () => {
   describe("identify", () => {
-    it("delegates to the given client", () => {
+    it("calls GET /users/identify", () => {
       const get = sinon.spy();
       const client = { get };
       const users = new Users(client);
@@ -20,27 +20,15 @@ describe("Users", () => {
     });
   });
 
-  describe("retrieve", () => {
-    it("delegates to the given client", () => {
-      const get = sinon.spy();
-      const client = { get };
+  describe("create", () => {
+    it("calls POST /users with the given parameters", () => {
+      const post = sinon.spy();
+      const client = { post };
       const users = new Users(client);
 
-      users.retrieve(123);
+      users.create({foo: "bar"})
 
-      expect(get).to.have.been.calledWith("/users/123");
-    });
-  });
-
-  describe("listSavedSearches", () => {
-    it("delegates to the given client", () => {
-      const get = sinon.spy();
-      const client = { get };
-      const users = new Users(client);
-
-      users.listSavedSearches(123);
-
-      expect(get).to.have.been.calledWith("/users/123/saved-searches");
+      expect(post).to.have.been.calledWith("/users", {foo: "bar"});
     });
   });
 });

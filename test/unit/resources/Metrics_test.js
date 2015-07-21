@@ -9,7 +9,7 @@ import Metrics from "../../../src/resources/Metrics";
 
 describe("Metrics", () => {
   describe("list", () => {
-    it("delegates to the client", () => {
+    it("calls GET /metrics", () => {
       const get = sinon.spy();
       const client = { get };
       const metrics = new Metrics(client);

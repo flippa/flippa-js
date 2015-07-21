@@ -1,9 +1,11 @@
 import Client from "./Client";
 
+import Listing from "./resources/Listing";
 import Listings from "./resources/Listings";
 import Metrics from "./resources/Metrics";
-import SavedSearches from "./resources/SavedSearches";
+import SavedSearch from "./resources/SavedSearch";
 import Sessions from "./resources/Sessions";
+import User from "./resources/User";
 import Users from "./resources/Users";
 
 import Promise from "bluebird";
@@ -32,12 +34,20 @@ export default class Flippa {
     });
   }
 
+  listing(listingId) {
+    return new Listing(this.client, listingId);
+  }
+
   get listings() {
     return new Listings(this.client);
   }
 
   get metrics() {
     return new Metrics(this.client);
+  }
+
+  user(userId) {
+    return new User(this.client, userId);
   }
 
   get users() {
@@ -48,7 +58,7 @@ export default class Flippa {
     return new Sessions(this.client);
   }
 
-  get savedSearches() {
-    return new SavedSearches(this.client);
+  savedSearch(savedSearchId) {
+    return new SavedSearch(this.client, savedSearchId);
   }
 };

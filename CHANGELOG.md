@@ -1,5 +1,11 @@
 ### head
 
+### 2.0.0
+
+* Support for watched item creation, watched item destruction, user creation,
+  and user alert listing endpoints.
+* Breaking: Re-arangement of resource API methods.
+
 ### 1.0.0
 
 * Package renamed from `flippa-node` to `flippa`.

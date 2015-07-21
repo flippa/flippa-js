@@ -1,5 +1,7 @@
 ### head
 
+### 2.2.0
+
 * Support for sales page endpoint.
 
 ### 2.1.0

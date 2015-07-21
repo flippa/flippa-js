@@ -19,4 +19,16 @@ describe("Users", () => {
       expect(get).to.have.been.calledWith("/users/identify");
     });
   });
+
+  describe("create", () => {
+    it("calls POST /users with the given parameters", () => {
+      const post = sinon.spy();
+      const client = { post };
+      const users = new Users(client);
+
+      users.create({foo: "bar"})
+
+      expect(post).to.have.been.calledWith("/users", {foo: "bar"});
+    });
+  });
 });

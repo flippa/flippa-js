@@ -23,7 +23,7 @@ describe("Flippa", () => {
       return flippa
         .authenticate(auth)
         .then((flippa) => {
-          expect(flippa.accessToken()).to.equal("some_token");
+          expect(flippa.accessToken).to.equal("some_token");
         })
         .catch((err) => { throw err; });
     });
@@ -47,7 +47,7 @@ describe("Flippa", () => {
       return flippa
         .authenticate(auth, { "utok": "bob" })
         .then((flippa) => {
-          expect(flippa.accessToken()).to.equal("some_token");
+          expect(flippa.accessToken).to.equal("some_token");
         })
         .catch((err) => { throw err; });
     });

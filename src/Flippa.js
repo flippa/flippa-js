@@ -15,8 +15,12 @@ export default class Flippa {
     this.client = new Client(opts);
   }
 
-  accessToken() {
+  get accessToken() {
     return this.client.accessToken;
+  }
+
+  set accessToken(token) {
+    this.client.accessToken = token;
   }
 
   authenticate(params, cookies={}) {

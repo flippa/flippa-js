@@ -13,6 +13,20 @@ import Users from "../../src/resources/Users";
 const expect = chai.expect;
 
 describe("Flippa", () => {
+  describe("access token", () => {
+    it("can be accessed and modified", () => {
+      const flippa = new Flippa();
+
+      expect(flippa.accessToken).to.eq(null);
+      expect(flippa.client.accessToken).to.eq(null);
+
+      flippa.accessToken = "bob";
+
+      expect(flippa.accessToken).to.eq("bob");
+      expect(flippa.client.accessToken).to.eq("bob");
+    });
+  });
+
   describe("listing", () => {
     it("returns a new Listing with the given ID", () => {
       const flippa = new Flippa();

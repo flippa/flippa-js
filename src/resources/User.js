@@ -17,4 +17,12 @@ export default class User extends Resource {
   listAlerts() {
     return this.client.get(`/users/${this.userId}/alerts`);
   }
+
+  createWatchedItem(params={}) {
+    return this.client.post(`/users/${this.userId}/watched-items`, params);
+  }
+
+  delWatchedItem(params={}) {
+    return this.client.del(`/users/${this.userId}/watched-items`, params);
+  }
 }

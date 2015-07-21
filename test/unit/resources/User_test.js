@@ -31,4 +31,16 @@ describe("User", () => {
       expect(get).to.have.been.calledWith("/users/123/saved-searches");
     });
   });
+
+  describe("listAlerts", () => {
+    it("calls GET /users/:userId/alerts", () => {
+      const get = sinon.spy();
+      const client = { get };
+      const user = new User(client, 123);
+
+      user.listAlerts();
+
+      expect(get).to.have.been.calledWith("/users/123/alerts");
+    });
+  });
 });

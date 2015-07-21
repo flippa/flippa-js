@@ -13,4 +13,8 @@ export default class User extends Resource {
   listSavedSearches() {
     return this.client.get(`/users/${this.userId}/saved-searches`);
   }
+
+  listAlerts() {
+    return this.client.get(`/users/${this.userId}/alerts`);
+  }
 }

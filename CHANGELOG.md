@@ -1,5 +1,7 @@
 ### head
 
+* Support for sales page endpoint.
+
 ### 2.1.0
 
 * Expose accessor and mutator for client access token.

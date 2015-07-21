@@ -3,6 +3,7 @@ import Client from "./Client";
 import Listing from "./resources/Listing";
 import Listings from "./resources/Listings";
 import Metrics from "./resources/Metrics";
+import SalesPage from "./resources/SalesPage";
 import SavedSearch from "./resources/SavedSearch";
 import Sessions from "./resources/Sessions";
 import User from "./resources/User";
@@ -60,6 +61,10 @@ export default class Flippa {
 
   get sessions() {
     return new Sessions(this.client);
+  }
+
+  salesPage(salesPageId) {
+    return new SalesPage(this.client, salesPageId);
   }
 
   savedSearch(savedSearchId) {

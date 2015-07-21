@@ -1,5 +1,9 @@
 ### head
 
+### 2.1.0
+
+* Expose accessor and mutator for client access token.
+
 ### 2.0.0
 
 * Support for watched item creation, watched item destruction, user creation,

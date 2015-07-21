@@ -7,7 +7,7 @@ export default class Client {
     this.accessToken = opts.accessToken || null;
   }
 
-  get(endpoint, params) {
+  get(endpoint, params={}) {
     var request = Request
       .get(this.baseEndpointURL + endpoint)
       .query(qs.stringify(params))
@@ -18,7 +18,7 @@ export default class Client {
     return request.promise();
   }
 
-  post(endpoint, params, cookies={}) {
+  post(endpoint, params={}, cookies={}) {
     var request = Request
       .post(this.baseEndpointURL + endpoint)
       .set("Accept", "application/json")
@@ -31,10 +31,11 @@ export default class Client {
     return request.promise();
   }
 
-  del(endpoint) {
+  del(endpoint, params={}) {
     var request = Request
       .del(this.baseEndpointURL + endpoint)
-      .set("Accept", "application/json");
+      .set("Accept", "application/json")
+      .send(params);
 
     this._setAuthorizationHeader(request);
 

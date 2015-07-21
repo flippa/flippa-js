@@ -1,5 +1,9 @@
 ### head
 
+### 2.2.1
+
+* Fix DELETE requests not sending parameters.
+
 ### 2.2.0
 
 * Support for sales page endpoint.

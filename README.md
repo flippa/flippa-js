@@ -1,6 +1,6 @@
-# flippa-node
+# flippa
 
-node.js API client for Flippa.com API.
+JavaScript API client for the Flippa.com API.
 
 # Authentication
 

@@ -40,7 +40,7 @@ Retrieving open listings by user 123:
 ```javascript
 flippa
   .listings
-  .list({filter: {status: "open", user_id: 123})
+  .list({filter: {status: "open", user_id: 123}})
   .then(function(response) {
     console.log(response.body.data);
   })

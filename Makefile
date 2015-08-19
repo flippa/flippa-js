@@ -1,4 +1,4 @@
-PROJECT ?= quay.io/flippa/flippa-node
+PROJECT ?= quay.io/flippa/flippa-js
 TAG     ?= dev
 IMAGE    = $(PROJECT):$(TAG)
 

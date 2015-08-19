@@ -1,20 +1,16 @@
 # flippa
 
-JavaScript API client for the Flippa.com API.
+JavaScript API client for the [Flippa.com API](https://developers.flippa.com).
+
+# Installation
+
+```
+npm install --save flippa
+```
 
 # Authentication
 
-The API client can either be provided an access token directly when
-constructed, or can request a token using one of the supported OAuth2 grant
-types.
-
-```javascript
-flippa = new Flippa({accessToken: "some_token"});
-```
-
-### Client Credentials Grant
-
-Currently, this grant type is limited to internal Flippa usage only.
+An access token can be requested using one of the supported OAuth2 grants:
 
 ```javascript
 flippa = new Flippa();
@@ -33,6 +29,13 @@ flippa
 The granted access token is stored in the client instance, meaning subsequent
 requests using the same client do not need to authenticate again.
 
+Alternately, the API client can be provided an access token directly when
+constructed:
+
+```javascript
+flippa = new Flippa({accessToken: "some_token"});
+```
+
 # Examples
 
 Retrieving open listings by user 123:
@@ -45,6 +48,8 @@ flippa
     console.log(response.body.data);
   })
 ```
+
+For more usage examples, see [the documentation](https://developers.flippa.com).
 
 # Development
 

@@ -1,5 +1,9 @@
 ### head
 
+### 2.3.0
+
+* Default API base endpoint is api.flippa.com.
+
 ### 2.2.1
 
 * Fix DELETE requests not sending parameters.

@@ -3,7 +3,7 @@ import qs from "qs";
 
 export default class Client {
   constructor(opts={}) {
-    this.baseEndpointURL = opts.baseEndpointURL || "https://flippa.com/v3";
+    this.baseEndpointURL = opts.baseEndpointURL || "https://api.flippa.com/v3";
     this.accessToken = opts.accessToken || null;
   }
 

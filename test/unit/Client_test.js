@@ -6,10 +6,10 @@ const expect = chai.expect;
 
 describe("Client", () => {
   describe("base endpoint URL", () => {
-    it("defaults to flippa.com/v3", () => {
+    it("defaults to api.flippa.com/v3", () => {
       const client = new Client();
 
-      expect(client.baseEndpointURL).to.equal("https://flippa.com/v3");
+      expect(client.baseEndpointURL).to.equal("https://api.flippa.com/v3");
     });
 
     it("can be overriden", () => {

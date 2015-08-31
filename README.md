@@ -1,6 +1,6 @@
 # flippa
 
-JavaScript API client for the [Flippa.com API](https://developers.flippa.com).
+JavaScript API client for the [Flippa.com API](http://developers.flippa.com).
 
 # Installation
 
@@ -49,7 +49,7 @@ flippa
   })
 ```
 
-For more usage examples, see [the documentation](https://developers.flippa.com).
+For more usage examples, see [the documentation](http://developers.flippa.com).
 
 # Development
 

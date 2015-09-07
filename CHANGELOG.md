@@ -1,5 +1,7 @@
 ### head
 
+* Support for Support Enquiry endpoint
+
 ### 2.3.0
 
 * Default API base endpoint is api.flippa.com.

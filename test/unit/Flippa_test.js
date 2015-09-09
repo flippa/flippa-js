@@ -2,6 +2,8 @@ import chai from "chai"
 
 import Flippa from "../../src/Flippa";
 
+import Career from "../../src/resources/Career";
+import Careers from "../../src/resources/Careers";
 import Listing from "../../src/resources/Listing";
 import Listings from "../../src/resources/Listings";
 import Metrics from "../../src/resources/Metrics";
@@ -26,6 +28,23 @@ describe("Flippa", () => {
 
       expect(flippa.accessToken).to.eq("bob");
       expect(flippa.client.accessToken).to.eq("bob");
+    });
+  });
+
+  describe("career", () => {
+    it("returns a new Career with the given ID", () => {
+      const flippa = new Flippa();
+
+      expect(flippa.career(123)).to.be.an.instanceOf(Career);
+      expect(flippa.career(123).careerId).to.eq(123);
+    });
+  });
+
+  describe("careers", () => {
+    it("returns a new Careers", () => {
+      const flippa = new Flippa();
+
+      expect(flippa.careers).to.be.an.instanceOf(Careers);
     });
   });
 

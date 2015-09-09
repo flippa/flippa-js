@@ -1,5 +1,7 @@
 import Client from "./Client";
 
+import Career from "./resources/Career";
+import Careers from "./resources/Careers";
 import Listing from "./resources/Listing";
 import Listings from "./resources/Listings";
 import Metrics from "./resources/Metrics";
@@ -75,4 +77,13 @@ export default class Flippa {
   get supportEnquiries() {
     return new SupportEnquiries(this.client);
   }
+
+  career(careerId) {
+    return new Career(this.client, careerId);
+  }
+
+  get careers() {
+    return new Careers(this.client);
+  }
+
 };

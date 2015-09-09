@@ -1,5 +1,7 @@
 ### head
 
+* Support for Careers endpoint
+
 ### 2.4.0
 
 * Support for Support Enquiry endpoint

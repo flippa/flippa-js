@@ -59,7 +59,17 @@ Running tests:
 $ make build test
 ```
 
-Publishing to npm:
+### Contributing
+
+This project follows [semantic versioning](http://semver.org).
+
+In order to make a change, do so from a feature branch and pull request the
+project. Your pull request should not include a version change. Instead, make
+an addition to the "head" version in the CHANGELOG that briefly describes the
+change and ideally links to the pull request.
+
+When releasing a new version, bump the version according to semver in
+`package.json`, then push and publish it:
 
 ```shell
 $ TAG=v1.2.3 make build test publish tag

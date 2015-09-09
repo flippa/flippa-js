@@ -8,6 +8,7 @@ import Metrics from "../../src/resources/Metrics";
 import SalesPage from "../../src/resources/SalesPage";
 import SavedSearch from "../../src/resources/SavedSearch";
 import Sessions from "../../src/resources/Sessions";
+import SupportEnquiries from "../../src/resources/SupportEnquiries";
 import User from "../../src/resources/User";
 import Users from "../../src/resources/Users";
 
@@ -93,6 +94,14 @@ describe("Flippa", () => {
 
       expect(flippa.salesPage(123)).to.be.an.instanceOf(SalesPage);
       expect(flippa.salesPage(123).salesPageId).to.eq(123);
+    });
+  });
+
+  describe("SupportEnquiries", () => {
+    it("returns a new SupportEnquiries", () => {
+      const flippa = new Flippa();
+
+      expect(flippa.supportEnquiries).to.be.an.instanceOf(SupportEnquiries);
     });
   });
 });

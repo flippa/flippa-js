@@ -1,5 +1,7 @@
 ### head
 
+### 2.4.0
+
 * Support for Support Enquiry endpoint
 
 ### 2.3.0

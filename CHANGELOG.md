@@ -1,5 +1,7 @@
 ### head
 
+* Support for Leads endpoint
+
 ### 2.5.0
 
 * Support for Careers endpoint

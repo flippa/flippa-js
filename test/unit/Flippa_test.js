@@ -4,6 +4,7 @@ import Flippa from "../../src/Flippa";
 
 import Career from "../../src/resources/Career";
 import Careers from "../../src/resources/Careers";
+import Lead from "../../src/resources/Lead";
 import Listing from "../../src/resources/Listing";
 import Listings from "../../src/resources/Listings";
 import Metrics from "../../src/resources/Metrics";
@@ -121,6 +122,14 @@ describe("Flippa", () => {
       const flippa = new Flippa();
 
       expect(flippa.supportEnquiries).to.be.an.instanceOf(SupportEnquiries);
+    });
+  });
+
+  describe("Lead", () => {
+    it("returns a new Lead", () => {
+      const flippa = new Flippa();
+
+      expect(flippa.lead).to.be.an.instanceOf(Lead);
     });
   });
 });

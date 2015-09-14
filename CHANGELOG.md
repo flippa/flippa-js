@@ -1,5 +1,7 @@
 ### head
 
+### 2.6.0
+
 * Support for Leads endpoint
 
 ### 2.5.0

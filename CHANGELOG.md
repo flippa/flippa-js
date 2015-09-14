@@ -1,5 +1,7 @@
 ### head
 
+### 2.5.0
+
 * Support for Careers endpoint
 
 ### 2.4.0

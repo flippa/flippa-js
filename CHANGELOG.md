@@ -1,5 +1,7 @@
 ### head
 
+### 2.6.1
+
 * Fix Leads not posting to correct endpoint
 
 ### 2.6.0

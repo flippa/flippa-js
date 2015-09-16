@@ -19,7 +19,7 @@ describe("Lead", () => {
 
       lead.create(params);
 
-      expect(post).to.have.been.calledWith("/lead", params);
+      expect(post).to.have.been.calledWith("/leads", params);
     });
   });
 });

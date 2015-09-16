@@ -1,5 +1,7 @@
 ### head
 
+* Fix Leads not posting to correct endpoint
+
 ### 2.6.0
 
 * Support for Leads endpoint

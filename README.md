@@ -51,6 +51,18 @@ flippa
 
 For more usage examples, see [the documentation](http://developers.flippa.com).
 
+# Timeout
+
+All requests timeout after 15s by default. This is configurable via the
+`timeout` option (in ms).
+
+Example:
+
+```js
+// set default timeout to 10s
+var flippa = new Flippa({timeout: 10000});
+```
+
 # Development
 
 Running tests:

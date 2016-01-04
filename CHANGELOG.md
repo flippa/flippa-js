@@ -1,5 +1,9 @@
 ### head
 
+### 2.7.0
+
+* Add timeout to all requests
+
 ### 2.6.1
 
 * Fix Leads not posting to correct endpoint

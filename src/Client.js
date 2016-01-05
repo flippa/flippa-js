@@ -5,6 +5,7 @@ export default class Client {
   constructor(opts={}) {
     this.baseEndpointURL = opts.baseEndpointURL || "https://api.flippa.com/v3";
     this.accessToken = opts.accessToken || null;
+    this.timeout = opts.timeout || 15000;
   }
 
   get(endpoint, params={}) {
@@ -12,6 +13,7 @@ export default class Client {
       .get(this.baseEndpointURL + endpoint)
       .query(qs.stringify(params))
       .set("Accept", "application/json")
+      .timeout(this.timeout);
 
     this._setAuthorizationHeader(request);
 
@@ -23,6 +25,7 @@ export default class Client {
       .post(this.baseEndpointURL + endpoint)
       .set("Accept", "application/json")
       .send(params)
+      .timeout(this.timeout);
 
     this._setCookieHeader(request, cookies)
 
@@ -35,7 +38,8 @@ export default class Client {
     var request = Request
       .del(this.baseEndpointURL + endpoint)
       .set("Accept", "application/json")
-      .send(params);
+      .send(params)
+      .timeout(this.timeout);
 
     this._setAuthorizationHeader(request);
 

@@ -1,5 +1,7 @@
 ### head
 
+* Add the ability to retrieve partner page details
+
 ### 2.7.0
 
 * Add timeout to all requests
@@ -40,7 +42,7 @@
 
 * Support for watched item creation, watched item destruction, user creation,
   and user alert listing endpoints.
-* Breaking: Re-arangement of resource API methods.
+* Breaking: Re-arrangement of resource API methods.
 
 ### 1.0.0
 

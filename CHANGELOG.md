@@ -1,5 +1,7 @@
 ### head
 
+### 2.8.0
+
 * Add the ability to retrieve partner page details
 
 ### 2.7.0

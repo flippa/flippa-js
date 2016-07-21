@@ -1,5 +1,7 @@
 ### head
 
+### 2.9.0
+
 * Support for Intercom endpoint
 
 ### 2.8.0

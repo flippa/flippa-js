@@ -15,6 +15,7 @@ import SupportEnquiries from "../../src/resources/SupportEnquiries";
 import User from "../../src/resources/User";
 import Users from "../../src/resources/Users";
 import PartnerPage from "../../src/resources/PartnerPage";
+import Intercom from "../../src/resources/Intercom";
 
 const expect = chai.expect;
 
@@ -142,4 +143,12 @@ describe("Flippa", () => {
       expect(flippa.partnerPage("domainHoldings").pageName).to.eq("domainHoldings");
     });
   });
+
+  describe("intercom", () => {
+    it("returns a new Intercom", () => {
+      const flippa = new Flippa();
+
+      expect(flippa.intercom).to.be.an.instanceOf(Intercom);
+    });
+  })
 });

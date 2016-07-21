@@ -13,6 +13,7 @@ import SupportEnquiries from "./resources/SupportEnquiries";
 import User from "./resources/User";
 import Users from "./resources/Users";
 import PartnerPage from "./resources/PartnerPage";
+import Intercom from "./resources/Intercom";
 
 import Promise from "bluebird";
 
@@ -94,5 +95,9 @@ export default class Flippa {
 
   partnerPage(pageName) {
     return new PartnerPage(this.client, pageName);
+  }
+
+  get intercom() {
+    return new Intercom(this.client);
   }
 };

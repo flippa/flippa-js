@@ -1,5 +1,7 @@
 ### head
 
+* Support for Intercom endpoint
+
 ### 2.8.0
 
 * Add the ability to retrieve partner page details

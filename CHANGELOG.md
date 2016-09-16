@@ -1,5 +1,6 @@
 ### head
 
+* Support for Session Flash Messages endpoint
 * Support for Intercom endpoint
 
 ### 2.8.0

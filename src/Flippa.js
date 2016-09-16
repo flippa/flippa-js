@@ -8,6 +8,7 @@ import Listings from "./resources/Listings";
 import Metrics from "./resources/Metrics";
 import SalesPage from "./resources/SalesPage";
 import SavedSearch from "./resources/SavedSearch";
+import SessionFlashMessages from "./resources/SessionFlashMessages";
 import Sessions from "./resources/Sessions";
 import SupportEnquiries from "./resources/SupportEnquiries";
 import User from "./resources/User";
@@ -63,6 +64,10 @@ export default class Flippa {
 
   get users() {
     return new Users(this.client);
+  }
+
+  get sessionFlashMessages() {
+    return new SessionFlashMessages(this.client);
   }
 
   get sessions() {

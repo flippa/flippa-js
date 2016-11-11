@@ -1,5 +1,9 @@
 ### head
 
+### 2.11.0
+
+* Support for updated Saved Searches endpoint
+
 ### 2.10.0
 
 * Support for Session Flash Messages endpoint

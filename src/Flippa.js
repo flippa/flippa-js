@@ -8,6 +8,7 @@ import Listings from "./resources/Listings";
 import Metrics from "./resources/Metrics";
 import SalesPage from "./resources/SalesPage";
 import SavedSearch from "./resources/SavedSearch";
+import SavedSearchSubscription from "./resources/SavedSearchSubscription";
 import SessionFlashMessages from "./resources/SessionFlashMessages";
 import Sessions from "./resources/Sessions";
 import SupportEnquiries from "./resources/SupportEnquiries";
@@ -80,6 +81,10 @@ export default class Flippa {
 
   savedSearch(savedSearchId) {
     return new SavedSearch(this.client, savedSearchId);
+  }
+
+  savedSearchSubscription(savedSearchId) {
+    return new SavedSearchSubscription(this.client, savedSearchId);
   }
 
   get supportEnquiries() {

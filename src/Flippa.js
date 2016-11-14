@@ -83,8 +83,16 @@ export default class Flippa {
     return new SavedSearch(this.client, savedSearchId);
   }
 
+  savedSearches() {
+    return new SavedSearch(this.client, null);
+  }
+
   savedSearchSubscription(savedSearchId) {
     return new SavedSearchSubscription(this.client, savedSearchId);
+  }
+
+  savedSearchSubscriptions() {
+    return new SavedSearchSubscription(this.client, null);
   }
 
   get supportEnquiries() {

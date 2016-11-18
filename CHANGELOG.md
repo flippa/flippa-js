@@ -1,5 +1,10 @@
 ### head
 
+### 2.11.1
+
+* Allow usage of pluralized resource name for saved search and saved search
+  subscription
+
 ### 2.11.0
 
 * Support for updated Saved Searches endpoint

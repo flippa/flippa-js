@@ -1,5 +1,7 @@
 ### head
 
+### 2.11.2
+
 * Set `Content-Type` header to `application/json` for post and delete requests.
 
 ### 2.11.1

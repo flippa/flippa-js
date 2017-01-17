@@ -24,6 +24,7 @@ export default class Client {
     var request = Request
       .post(this.baseEndpointURL + endpoint)
       .set("Accept", "application/json")
+      .set("Content-Type", "application/json")
       .send(params)
       .timeout(this.timeout);
 
@@ -38,6 +39,7 @@ export default class Client {
     var request = Request
       .del(this.baseEndpointURL + endpoint)
       .set("Accept", "application/json")
+      .set("Content-Type", "application/json")
       .send(params)
       .timeout(this.timeout);
 

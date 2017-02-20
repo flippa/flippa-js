@@ -1,6 +1,6 @@
 {
   "name": "flippa",
-  "version": "2.11.2",
+  "version": "2.11.3",
   "description": "API client for Flippa.com.",
   "readme": "README.md",
   "main": "dist/Flippa.js",

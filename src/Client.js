@@ -23,6 +23,7 @@ export default class Client {
   post(endpoint, params={}, cookies={}) {
     var request = Request
       .post(this.baseEndpointURL + endpoint)
+      .withCredentials()
       .set("Accept", "application/json")
       .set("Content-Type", "application/json")
       .send(params)

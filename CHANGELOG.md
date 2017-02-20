@@ -1,5 +1,9 @@
 ### head
 
+### 2.11.4
+
+* Set `withCredentials` on request to support CORS cookie sessions
+
 ### 2.11.2
 
 * Set `Content-Type` header to `application/json` for post and delete requests.

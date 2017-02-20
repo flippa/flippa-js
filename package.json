@@ -33,9 +33,9 @@
     "webpack": "^1.9.8"
   },
   "dependencies": {
-    "bluebird": "^2.9.25",
+    "bluebird": "^3.4.7",
     "qs": "^4.0.0",
-    "superagent": "^1.2.0",
-    "superagent-bluebird-promise": "^2.0.2"
+    "superagent": "^3.4.4",
+    "superagent-bluebird-promise": "^4.1.0"
   }
 }

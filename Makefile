@@ -8,13 +8,13 @@ build: Dockerfile
 	docker build --rm -t $(IMAGE) .
 
 shell:
-	docker run --rm -it -v $(PWD):/src $(IMAGE) bash
+	docker run --rm -it -v $(PWD):/src $(IMAGE) sh
 
 test:
 	docker run --rm -t $(IMAGE) npm run test
 
 publish: build
-	docker run --rm -it $(IMAGE) bash scripts/publish.sh
+	docker run --rm -it $(IMAGE) ./scripts/publish.sh
 
 tag:
 	git tag $(TAG)

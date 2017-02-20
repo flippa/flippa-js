@@ -1,4 +1,4 @@
-FROM node:0.10
+FROM node:6.9.1-alpine
 
 ADD package.json /src/
 

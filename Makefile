@@ -8,7 +8,7 @@ build: Dockerfile
 	docker build --rm -t $(IMAGE) .
 
 shell:
-	docker run --rm -it -v $(PWD):/src $(IMAGE) bash
+	docker run --rm -it -v $(PWD):/src $(IMAGE) sh
 
 test:
 	docker run --rm -t $(IMAGE) npm run test

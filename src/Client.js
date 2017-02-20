@@ -11,6 +11,7 @@ export default class Client {
   get(endpoint, params={}) {
     var request = Request
       .get(this.baseEndpointURL + endpoint)
+      .withCredentials()
       .query(qs.stringify(params))
       .set("Accept", "application/json")
       .timeout(this.timeout);
@@ -23,6 +24,7 @@ export default class Client {
   post(endpoint, params={}, cookies={}) {
     var request = Request
       .post(this.baseEndpointURL + endpoint)
+      .withCredentials()
       .set("Accept", "application/json")
       .set("Content-Type", "application/json")
       .send(params)
@@ -38,6 +40,7 @@ export default class Client {
   del(endpoint, params={}) {
     var request = Request
       .del(this.baseEndpointURL + endpoint)
+      .withCredentials()
       .set("Accept", "application/json")
       .set("Content-Type", "application/json")
       .send(params)

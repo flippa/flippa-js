@@ -1,4 +1,4 @@
-import Request from "superagent-bluebird-promise";
+import Request from "superagent";
 import qs from "qs";
 
 export default class Client {
@@ -18,7 +18,7 @@ export default class Client {
 
     this._setAuthorizationHeader(request);
 
-    return request.promise();
+    return request;
   }
 
   post(endpoint, params={}, cookies={}) {
@@ -34,7 +34,7 @@ export default class Client {
 
     this._setAuthorizationHeader(request);
 
-    return request.promise();
+    return request;
   }
 
   del(endpoint, params={}) {
@@ -48,7 +48,7 @@ export default class Client {
 
     this._setAuthorizationHeader(request);
 
-    return request.promise();
+    return request;
   }
 
   _setAuthorizationHeader(request) {

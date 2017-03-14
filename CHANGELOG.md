@@ -1,9 +1,10 @@
 ### head
 
-### 2.12.0
+### 3.0.0
 
 * Preferred native promises over bluebird
 * Removed `bluebird`, `superagent-bluebird-promise`
+* Promises now require a polyfill
 
 ### 2.11.4
 

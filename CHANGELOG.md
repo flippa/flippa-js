@@ -1,5 +1,10 @@
 ### head
 
+### 2.12.0
+
+* Preferred native promises over bluebird
+* Removed `bluebird`, `superagent-bluebird-promise`
+
 ### 2.11.4
 
 * Set `withCredentials` on request to support CORS cookie sessions

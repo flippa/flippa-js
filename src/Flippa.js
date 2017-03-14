@@ -17,7 +17,6 @@ import Users from "./resources/Users";
 import PartnerPage from "./resources/PartnerPage";
 import Intercom from "./resources/Intercom";
 
-import Promise from "bluebird";
 
 export default class Flippa {
   constructor(opts={}) {

@@ -1,5 +1,11 @@
 ### head
 
+### 3.0.0
+
+* Preferred native promises over bluebird
+* Removed `bluebird`, `superagent-bluebird-promise`
+* Promises now require a polyfill
+
 ### 2.11.4
 
 * Set `withCredentials` on request to support CORS cookie sessions

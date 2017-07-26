@@ -3,6 +3,7 @@
 ### 3.1.0
 
 * Remove deprecated partner page details
+* Change docker repository
 
 ### 3.0.0
 

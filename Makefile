@@ -1,6 +1,8 @@
-PROJECT ?= quay.io/flippa/flippa-js
-TAG     ?= dev
-IMAGE    = $(PROJECT):$(TAG)
+REGISTRY ?= 578700794486.dkr.ecr.us-east-1.amazonaws.com
+PROJECT ?= flippa-js
+TAG ?= dev
+
+IMAGE ?= "$(REGISTRY)/$(PROJECT):$(TAG)"
 
 .PHONY: build shell test publish tag
 

@@ -14,7 +14,6 @@ import Sessions from "./resources/Sessions";
 import SupportEnquiries from "./resources/SupportEnquiries";
 import User from "./resources/User";
 import Users from "./resources/Users";
-import Intercom from "./resources/Intercom";
 
 
 export default class Flippa {
@@ -107,9 +106,5 @@ export default class Flippa {
 
   get lead() {
     return new Lead(this.client);
-  }
-
-  get intercom() {
-    return new Intercom(this.client);
   }
 };

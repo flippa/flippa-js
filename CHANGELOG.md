@@ -2,7 +2,8 @@
 
 ### 3.1.0
 
-* Remove deprecated partner page details
+* Remove deprecated partner page details endpoint
+* Remove deprecated Intercom endpoint
 * Change docker repository
 
 ### 3.0.0

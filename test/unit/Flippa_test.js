@@ -14,7 +14,6 @@ import Sessions from "../../src/resources/Sessions";
 import SupportEnquiries from "../../src/resources/SupportEnquiries";
 import User from "../../src/resources/User";
 import Users from "../../src/resources/Users";
-import Intercom from "../../src/resources/Intercom";
 
 const expect = chai.expect;
 
@@ -131,14 +130,6 @@ describe("Flippa", () => {
       const flippa = new Flippa();
 
       expect(flippa.lead).to.be.an.instanceOf(Lead);
-    });
-  });
-
-  describe("intercom", () => {
-    it("returns a new Intercom", () => {
-      const flippa = new Flippa();
-
-      expect(flippa.intercom).to.be.an.instanceOf(Intercom);
     });
   })
 });

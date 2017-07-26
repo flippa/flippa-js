@@ -1,5 +1,9 @@
 ### head
 
+### 3.1.0
+
+* Remove deprecated partner page details
+
 ### 3.0.0
 
 * Preferred native promises over bluebird

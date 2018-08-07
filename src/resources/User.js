@@ -25,4 +25,8 @@ export default class User extends Resource {
   delWatchedItem(params={}) {
     return this.client.del(`/users/${this.userId}/watched-items`, params);
   }
+
+  retrieveExperiment(name) {
+    return this.client.get(`/users/${this.userId}/experiments/${name}`);
+  }
 }

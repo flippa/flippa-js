@@ -67,4 +67,16 @@ describe("User", () => {
       expect(del).to.have.been.calledWith("/users/123/watched-items", {foo: "bar"});
     });
   });
+
+  describe("retrieveExperiment", () => {
+    it("calls GET /users/:userId/experiments/:name", () => {
+      const get = sinon.spy();
+      const client = { get };
+      const user = new User(client, 123);
+
+      user.retrieveExperiment("simple-experiment");
+
+      expect(get).to.have.been.calledWith("/users/123/experiments/simple-experiment");
+    });
+  });
 });

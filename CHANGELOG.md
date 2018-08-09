@@ -1,5 +1,7 @@
 ### head
 
+### 3.1.1
+
 * Add 'experiments' endpoint
 
 ### 3.1.0

@@ -1,5 +1,7 @@
 ### head
 
+* Add 'experiments' endpoint
+
 ### 3.1.0
 
 * Remove deprecated partner page details endpoint
